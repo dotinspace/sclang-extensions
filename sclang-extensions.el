@@ -194,9 +194,9 @@ Either eval the current region or the top level grouping at point."
 (defun sclang-set-osx-paths ()
   "Set sclang paths to modern values on OS X."
   (when (equal system-type 'darwin)
-    (let ((resources (concat sclang-osx-app-path "/Contents/Resources")))
+    (let ((resources (concat sclang-osx-app-path "/Contents/MacOS")))
       (setq
-       sclang-runtime-directory (concat resources "/SCClassLibrary")
+       sclang-runtime-directory sclang-osx-app-path 
        sclang-program (concat resources "/sclang")
        sclang-extension-path (list (concat sclang-osx-sc-app-support "/Extensions"))
 
